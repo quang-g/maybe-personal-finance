@@ -85,4 +85,8 @@ Rails.application.configure do
 
   # Allow connection from any host in development
   config.hosts = nil
+
+  # Disable strict Origin header verification so forwarded ports work in Codespaces
+  # This relaxes CSRF protection by skipping the Origin check in development
+  config.action_controller.forgery_protection_origin_check = false
 end
