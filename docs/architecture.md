@@ -1,5 +1,6 @@
 # Architecture Overview
 
+
 This project is built with **Ruby on Rails 7.2** and uses the Hotwire suite (Turbo
 and Stimulus) for the front‑end. Data is stored in **PostgreSQL** and background
 jobs run through **Sidekiq** backed by **Redis**.
@@ -31,3 +32,7 @@ Refer to `db/schema.rb` for the full relationships.
 Background jobs are queued with Sidekiq. Recurring tasks are configured in
 `config/schedule.yml`, which is loaded by `sidekiq-cron` to enqueue jobs on a
 schedule. Examples include market data imports and cleanup tasks.
+=======
+This document gives a brief overview of the major components that make up Maybe.
+
+The application is a standard Ruby on Rails monolith that also serves a modern JavaScript front end. Postgres is used as the primary database and Redis powers background jobs and caching. Docker is the recommended way to run these services together in development and production environments.
