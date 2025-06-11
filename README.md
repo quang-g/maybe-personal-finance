@@ -6,6 +6,8 @@
 <b>Get
 involved: [Discord](https://link.maybe.co/discord) • [Website](https://maybefinance.com) • [Issues](https://github.com/maybe-finance/maybe/issues)</b>
 
+Maybe is an open-source personal finance application. You can deploy it yourself with Docker or use our managed hosting service. Learn how the pieces fit together in the [architecture overview](docs/architecture.md) and follow the [setup guide](docs/setup.md) to get started.
+
 ## Backstory
 
 We spent the better part of 2021/2022 building a personal finance + wealth
