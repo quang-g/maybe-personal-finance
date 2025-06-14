@@ -24,6 +24,8 @@ choose which services to enable.
 - **Account** – represents a single financial account with balances and entries
 - **Transaction** – entry that tracks income or spending on an account
 - **Budget** – monthly budget with categories and allocations
+See [core models guide](core_models.md) for relationships and key methods.
+
 
 Refer to `db/schema.rb` for the full relationships.
 
