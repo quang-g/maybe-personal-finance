@@ -71,3 +71,31 @@ These guidelines keep the codebase consistent and easy to understand:
 - Place business logic in `app/models` using plain Ruby objects or Rails concerns. Avoid separate `services` directories.
 - Tests use **Minitest** with a minimal fixture set. Helpers in `test/support` act as lightweight factories when many records are required.
 - Stick to the [Tailwind](app/assets/tailwind/maybe-design-system.css) tokens when writing styles and prefer semantic HTML with Turbo/Stimulus.
+
+## Running the Test Suite
+
+Tests use **Minitest** along with fixtures and helpers in `test/support`.
+
+1. Install dependencies:
+   ```
+   bundle install
+   npm install
+   ```
+2. Copy the example environment file:
+   ```
+   cp .env.test.example .env.test
+   ```
+3. Set up the database:
+   ```
+   bin/rails db:create db:schema:load
+   ```
+
+Run tests with:
+
+```
+bin/rails test                         # all unit and integration tests
+DISABLE_PARALLELIZATION=true bin/rails test:system  # system tests (needs Chrome)
+COVERAGE=true bin/rails test           # enable SimpleCov
+```
+
+Optional environment variables include `DISABLE_PARALLELIZATION`, `COVERAGE` and `E2E_BROWSER`. See `test/test_helper.rb` for details.
