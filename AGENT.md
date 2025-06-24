@@ -54,3 +54,20 @@ See `docs/core_models.md` for more details on the domain models and `db/schema.r
 ## Getting Started
 
 For development setup instructions consult `docs/setup.md`. To self‑host the application using Docker see `docs/hosting/docker.md`.
+
+## Coding Standards
+
+These guidelines keep the codebase consistent and easy to understand:
+
+- **Ruby style** is enforced through [RuboCop](https://github.com/rubocop/rubocop) using the `rubocop-rails-omakase` preset. Indentation uses **two spaces** and tabs are never used. The config lives in `.rubocop.yml`.
+- **ERB templates** are checked by `erb_lint` and require **double quoted** strings.
+- **JavaScript** in `app/javascript` is formatted and linted with [Biome](https://biomejs.dev) (`npm run lint`). The formatter also enforces two‑space indentation and double quotes.
+- A project wide `.editorconfig` sets UTF‑8 encoding, LF line endings and two‑space indentation so editors stay in sync.
+- Class names follow `CamelCase` while files, methods and variables use `snake_case`. Stimulus controllers and other JS files are named with `snake_case` as well.
+- Use `Current.user` and `Current.family` for global context inside controllers and models.
+
+### Development practices
+
+- Place business logic in `app/models` using plain Ruby objects or Rails concerns. Avoid separate `services` directories.
+- Tests use **Minitest** with a minimal fixture set. Helpers in `test/support` act as lightweight factories when many records are required.
+- Stick to the [Tailwind](app/assets/tailwind/maybe-design-system.css) tokens when writing styles and prefer semantic HTML with Turbo/Stimulus.
