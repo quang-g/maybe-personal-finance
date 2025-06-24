@@ -54,3 +54,11 @@ See `docs/core_models.md` for more details on the domain models and `db/schema.r
 ## Getting Started
 
 For development setup instructions consult `docs/setup.md`. To self‑host the application using Docker see `docs/hosting/docker.md`.
+
+## Running Tests
+
+- The project uses Minitest for unit, integration and system tests.
+- Run unit and integration tests with `bin/rails test`.
+- Run system tests with `bin/rails test:system`. In CI, `DISABLE_PARALLELIZATION=true` is set to avoid concurrency issues.
+- Set `COVERAGE=true` to generate SimpleCov reports.
+- `.env.test.example` documents other environment variables like provider keys for the test suite.
